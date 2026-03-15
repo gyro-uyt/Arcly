@@ -1,6 +1,6 @@
 # Arcly — Improvement Roadmap
 
-## 🎨 UI & Design
+## UI & Design
 
 ### Clock Enhancements
 - [ ] Add smooth animated transitions when arcs appear/disappear (fade + grow effect)
@@ -29,7 +29,7 @@
 
 ---
 
-## ⚡ Features
+## Features
 
 ### Core Functionality
 - [ ] Edit existing activities (click an arc or list item → reopen modal with prefilled data)
@@ -56,7 +56,7 @@
 
 ---
 
-## 🏗️ Technical & Architecture
+## Technical & Architecture
 
 ### Performance
 - [ ] Throttle canvas re-renders — only redraw when state changes (not every frame)
@@ -68,7 +68,7 @@
 - [ ] Set up ESLint with a consistent code style
 - [ ] Add unit tests for `time-utils.js` (pure functions are easy to test)
 - [ ] Add integration tests using Playwright for drag interactions
-- [ ] Create a `README.md` with setup instructions, screenshots, and feature list
+- [x] Create a `README.md` with setup instructions, screenshots, and feature list
 
 ### Deployment & Distribution
 - [ ] Set up GitHub Pages for free hosting (arcly.github.io)
@@ -85,7 +85,7 @@
 
 ---
 
-## 🚀 Growth & Marketing
+## Growth & Marketing
 
 - [ ] Create a landing page with animated demo + feature highlights
 - [ ] Product Hunt launch
@@ -95,15 +95,15 @@
 
 ---
 
-## 📋 Priority Order (Suggested)
+## Priority Order (Suggested)
 
-1. **README.md** — essential for GitHub presence
-2. **Favicon** — looks unprofessional without one
-3. **Edit activities** — most requested missing feature
-4. **PWA + GitHub Pages** — makes it installable & accessible to anyone
-5. **Theme switcher** — instant visual wow factor
-6. **Overlap detection** — prevents data errors
-7. **Daily summary** — gives users a reason to come back
-8. **Responsive clock** — mobile users can't use it well currently
-9. **Weekly view** — turns it from a toy into a real tool
-10. **Export/Import** — builds user trust (their data isn't locked in)
+1. **Favicon** — looks unprofessional without one
+2. **Edit activities** — most requested missing feature
+3. **PWA + GitHub Pages** — makes it installable & accessible to anyone
+4. **Theme switcher** — instant visual wow factor
+5. **Overlap detection** — prevents data errors
+6. **Daily summary** — gives users a reason to come back
+7. **Responsive clock** — mobile users can't use it well currently
+8. **Weekly view** — turns it from a toy into a real tool
+9. **Export/Import** — builds user trust (their data isn't locked in)
+10. **Custom Categories** — allow users to define their own tags
