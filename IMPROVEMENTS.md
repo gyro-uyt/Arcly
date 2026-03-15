@@ -97,9 +97,9 @@
 
 ## Priority Order (Suggested)
 
-1. **Favicon** — looks unprofessional without one
+1. [x] **Favicon** — user created custom clock-face icon
 2. **Edit activities** — most requested missing feature
-3. **PWA + GitHub Pages** — makes it installable & accessible to anyone
+3. [x] **PWA + GitHub Pages** — installable & accessible to anyone
 4. **Theme switcher** — instant visual wow factor
 5. **Overlap detection** — prevents data errors
 6. **Daily summary** — gives users a reason to come back

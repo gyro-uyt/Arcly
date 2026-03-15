@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arcly Favicon Generator</title>
+  <style>
+    body {
+      background: #151827;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    canvas {
+      border-radius: 20%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      width: 256px;
+      height: 256px;
+    }
+    button {
+      background: #6c5ce7;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    button:hover {
+      background: #5649c0;
+      transform: scale(1.05);
+    }
+    .instructions {
+      max-width: 400px;
+      text-align: center;
+      color: #a0a5b5;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Arcly High-Res Icon</h2>
+  <canvas id="faviconCanvas" width="512" height="512"></canvas>
+  <button onclick="downloadIcon()">Download favicon.png</button>
+
+  <p class="instructions">
+    This draws a specialized "thick" version of the Arcly clock optimized for small sizes (16x16 to 192x192). It uses the deep midnight background, thick glowing arcs, and geometric hands so it stands out powerfully in browser tabs.
+  </p>
+
+  <script>
+    const canvas = document.getElementById('faviconCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    const SIZE = 512;
+    const CX = SIZE / 2;
+    const CY = SIZE / 2;
+    const RADIUS = 230; // ─── ZOOMED IN (was 180)
+    const ARC_W = 75;   // ─── THICKER (was 56)
+
+    // Background (Deep Midnight Option 1)
+    ctx.fillStyle = '#151827';
+    ctx.fillRect(0, 0, SIZE, SIZE);
+
+    // 1. Base Ring (slightly lighter to give form)
+    ctx.beginPath();
+    ctx.arc(CX, CY, RADIUS, 0, 2 * Math.PI);
+    ctx.strokeStyle = '#1e2235';
+    ctx.lineWidth = ARC_W;
+    ctx.stroke();
+
+    // 2. Activity Arcs (BOLDER GLOW)
+    function drawArc(startH, endH, color) {
+      const s = -Math.PI/2 + (startH / 24) * 2 * Math.PI;
+      const e = -Math.PI/2 + (endH / 24) * 2 * Math.PI;
+      ctx.beginPath();
+      ctx.arc(CX, CY, RADIUS, s, e);
+      ctx.strokeStyle = color;
+      ctx.lineWidth = ARC_W;
+      
+      ctx.shadowColor = color;
+      ctx.shadowBlur = 20;
+      ctx.stroke();
+    }
+
+    // Add iconic arcs
+    drawArc(0, 6.5, '#6c5ce7');  // Study (Purple) 
+    drawArc(10, 16, '#0984e3'); // Work (Blue)
+
+    ctx.shadowBlur = 0;
+
+    // ─── REMOVED DOTS (They take up too much space) ───
+
+    // 3. Hero Clock Hands (SUPERTALL & BOLD)
+    // Hour hand 
+    const hAngle = -Math.PI/2 + (10/12) * 2 * Math.PI;
+    ctx.beginPath();
+    ctx.moveTo(CX, CY);
+    ctx.lineTo(CX + Math.cos(hAngle) * (RADIUS * 0.6), CY + Math.sin(hAngle) * (RADIUS * 0.6));
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 32;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Minute hand
+    const mAngle = -Math.PI/2 + (2/12) * 2 * Math.PI;
+    ctx.beginPath();
+    ctx.moveTo(CX, CY);
+    ctx.lineTo(CX + Math.cos(mAngle) * (RADIUS * 0.85), CY + Math.sin(mAngle) * (RADIUS * 0.85));
+    ctx.strokeStyle = '#e0e0e0';
+    ctx.lineWidth = 22;
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Second hand (Accent Purple - Bolder)
+    const sAngle = -Math.PI/2 + (6/12) * 2 * Math.PI;
+    ctx.beginPath();
+    ctx.moveTo(CX - Math.cos(sAngle)*30, CY - Math.sin(sAngle)*30);
+    ctx.lineTo(CX + Math.cos(sAngle) * (RADIUS * 0.95), CY + Math.sin(sAngle) * (RADIUS * 0.95));
+    ctx.strokeStyle = '#6c5ce7';
+    ctx.lineWidth = 12;
+    ctx.lineCap = 'round';
+    
+    ctx.shadowColor = '#6c5ce7';
+    ctx.shadowBlur = 15;
+    ctx.stroke();
+
+    // Center pivot
+    ctx.beginPath();
+    ctx.arc(CX, CY, 22, 0, 2 * Math.PI);
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowBlur = 0;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(CX, CY, 11, 0, 2 * Math.PI);
+    ctx.fillStyle = '#6c5ce7';
+    ctx.fill();
+
+    function downloadIcon() {
+      const link = document.createElement('a');
+      link.download = 'favicon-source.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>

@@ -73,7 +73,9 @@ Arcly/
 │   ├── modal.js            # Activity logging modal
 │   └── activity-list.js    # Sidebar list rendering
 ├── assets/                 # Screenshots and media
-├── LICENSE
+├── .gitignore              # Standard ignore rules
+├── LICENSE                 # MIT License
+├── README.md               # Home base
 └── IMPROVEMENTS.md         # Roadmap
 ```
 

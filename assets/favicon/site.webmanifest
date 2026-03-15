@@ -1,0 +1,30 @@
+{
+  "name": "Arcly — Daily Time Tracker",
+  "short_name": "Arcly",
+  "description": "A visual 24-hour clock time tracker. Drag on the ring, log what you did, see your entire day at a glance.",
+  "start_url": "../..",
+  "scope": "../..",
+  "display": "standalone",
+  "theme_color": "#151827",
+  "background_color": "#0b0e17",
+  "icons": [
+    {
+      "src": "web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
