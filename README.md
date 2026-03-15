@@ -5,6 +5,8 @@
 **A visual time tracker built around a 24-hour clock face.**
 Drag on the ring, log what you did, see your entire day at a glance.
 
+**[Try it live](https://gyro-uyt.github.io/Arcly/)** | **[Report a bug](https://github.com/gyro-uyt/Arcly/issues)**
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-6c5ce7.svg)](./LICENSE)
 [![Built with](https://img.shields.io/badge/Built_with-Vanilla_JS-f0db4f.svg)](#)
 [![No Dependencies](https://img.shields.io/badge/Dependencies-Zero-00b894.svg)](#)
